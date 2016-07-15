@@ -1,0 +1,4 @@
+1.安装http-server
+	npm install -g http-server
+2.启动http-server
+	http-server -a localhost -p 3000
