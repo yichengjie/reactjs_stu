@@ -1,5 +1,7 @@
 import React from 'react' ;
+//类别row
 import ProductCategoryRow from './ProductCategoryRow.jsx' ;
+//产品row
 import ProductRow from './ProductRow.jsx' ;
 
 var ProductTable = React.createClass({
@@ -14,7 +16,7 @@ var ProductTable = React.createClass({
       lastCategory = product.category;
     });
     return (
-      <table>
+      <table className ="table">
         <thead>
           <tr>
             <th>Name</th>

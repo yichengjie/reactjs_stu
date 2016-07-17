@@ -21129,14 +21129,39 @@
 	  render: function render() {
 	    return _react2.default.createElement(
 	      "form",
-	      null,
-	      _react2.default.createElement("input", { type: "text", placeholder: "Search..." }),
+	      { className: "form-horizontal" },
 	      _react2.default.createElement(
-	        "p",
-	        null,
-	        _react2.default.createElement("input", { type: "checkbox" }),
-	        ' ',
-	        "Only show products in stock"
+	        "div",
+	        { className: "form-group" },
+	        _react2.default.createElement(
+	          "label",
+	          { className: "col-sm-2 control-label" },
+	          "过滤关键字"
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "col-sm-10" },
+	          _react2.default.createElement("input", { type: "text", className: "form-control", placeholder: "Search..." })
+	        )
+	      ),
+	      _react2.default.createElement(
+	        "div",
+	        { className: "form-group" },
+	        _react2.default.createElement(
+	          "div",
+	          { className: "col-sm-offset-2 col-sm-10" },
+	          _react2.default.createElement(
+	            "div",
+	            { className: "checkbox" },
+	            _react2.default.createElement(
+	              "label",
+	              null,
+	              _react2.default.createElement("input", { type: "checkbox" }),
+	              ' ',
+	              "Only show products in stock"
+	            )
+	          )
+	        )
 	      )
 	    );
 	  }
@@ -21168,6 +21193,9 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	//类别row
+
+
 	var ProductTable = _react2.default.createClass({
 	  displayName: 'ProductTable',
 
@@ -21183,7 +21211,7 @@
 	    });
 	    return _react2.default.createElement(
 	      'table',
-	      null,
+	      { className: 'table' },
 	      _react2.default.createElement(
 	        'thead',
 	        null,
@@ -21210,6 +21238,8 @@
 	    );
 	  }
 	});
+	//产品row
+
 
 	exports.default = ProductTable;
 
