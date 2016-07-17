@@ -21203,10 +21203,14 @@
 	    var rows = [];
 	    var lastCategory = null;
 	    this.props.products.forEach(function (product) {
+	      //判断当前的类别和上一个类别是否相同
+	      //如果相同则显示产品项列表
+	      //如果不同则显示产品类别列表
 	      if (product.category !== lastCategory) {
 	        rows.push(_react2.default.createElement(_ProductCategoryRow2.default, { category: product.category, key: product.category }));
 	      }
 	      rows.push(_react2.default.createElement(_ProductRow2.default, { product: product, key: product.name }));
+	      //更新当前的类别名称
 	      lastCategory = product.category;
 	    });
 	    return _react2.default.createElement(
