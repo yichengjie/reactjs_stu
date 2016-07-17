@@ -1,0 +1,25 @@
+{
+  "name": "reactjs_stu",
+  "description": "react study demo",
+  "main": "index.js",
+  "authors": [
+    "yicj"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "yicj",
+    "reactjs"
+  ],
+  "homepage": "https://github.com/yichengjie/reactjs_stu",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}
