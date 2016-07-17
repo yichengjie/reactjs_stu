@@ -21088,7 +21088,7 @@
 
 	var _CommentForm2 = _interopRequireDefault(_CommentForm);
 
-	var _jquery = __webpack_require__(176);
+	var _jquery = __webpack_require__(177);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
@@ -21223,13 +21223,10 @@
 
 	  render: function render() {
 	    return _react2.default.createElement(
-	      "div",
-	      { className: "comment" },
-	      _react2.default.createElement(
-	        "h2",
-	        { className: "commentAuthor" },
-	        this.props.author
-	      ),
+	      "p",
+	      { className: "bg-primary", style: { padding: "15px" } },
+	      this.props.author,
+	      "-----",
 	      this.props.children
 	    );
 	  }
@@ -21250,6 +21247,10 @@
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _UUID = __webpack_require__(176);
+
+	var _UUID2 = _interopRequireDefault(_UUID);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21273,8 +21274,9 @@
 			if (!text || !author) {
 				return;
 			}
+			var id = (0, _UUID2.default)();
 			//将数据传递给父组件
-			this.props.onCommentSubmit({ id: '4', author: author, text: text });
+			this.props.onCommentSubmit({ id: id, author: author, text: text });
 			//todo: send request to the server
 			this.setState({ author: '', text: '' });
 		},
@@ -21282,19 +21284,43 @@
 			return _react2.default.createElement(
 				'form',
 				{ className: 'commentForm', onSubmit: this.handleSubmit },
-				_react2.default.createElement('input', {
-					type: 'text',
-					placeholder: 'Your name',
-					value: this.state.author,
-					onChange: this.handleAuthorChange
-				}),
-				_react2.default.createElement('input', {
-					type: 'text',
-					placeholder: 'Say something...',
-					value: this.state.text,
-					onChange: this.handleTextChange
-				}),
-				_react2.default.createElement('input', { type: 'submit', value: 'Post' })
+				_react2.default.createElement(
+					'div',
+					{ className: 'form-group' },
+					_react2.default.createElement(
+						'label',
+						null,
+						'Your name'
+					),
+					_react2.default.createElement('input', {
+						className: 'form-control',
+						type: 'text',
+						placeholder: 'Your name',
+						value: this.state.author,
+						onChange: this.handleAuthorChange
+					})
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'form-group' },
+					_react2.default.createElement(
+						'label',
+						null,
+						'Say something'
+					),
+					_react2.default.createElement('input', {
+						className: 'form-control',
+						type: 'text',
+						placeholder: 'Say something...',
+						value: this.state.text,
+						onChange: this.handleTextChange
+					})
+				),
+				_react2.default.createElement(
+					'button',
+					{ type: 'submit', className: 'btn btn-default' },
+					'Submit'
+				)
 			);
 		}
 	});
@@ -21303,6 +21329,31 @@
 
 /***/ },
 /* 176 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	function uuid() {
+		var s = [];
+		var hexDigits = "0123456789abcdef";
+		for (var i = 0; i < 36; i++) {
+			s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+		}
+		s[14] = "4"; // bits 12-15 of the time_hi_and_version field to 0010
+		s[19] = hexDigits.substr(s[19] & 0x3 | 0x8, 1); // bits 6-7 of the clock_seq_hi_and_reserved to 01
+		s[8] = s[13] = s[18] = s[23] = "-";
+
+		var uuid = s.join("");
+		return uuid;
+	}
+
+	exports.default = uuid;
+
+/***/ },
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*eslint-disable no-unused-vars*/
