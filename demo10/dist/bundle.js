@@ -21134,11 +21134,6 @@
 	        "div",
 	        { className: "form-group" },
 	        _react2.default.createElement(
-	          "label",
-	          { className: "col-sm-2 control-label" },
-	          "过滤关键字"
-	        ),
-	        _react2.default.createElement(
 	          "div",
 	          { className: "col-sm-10" },
 	          _react2.default.createElement("input", { type: "text", className: "form-control", placeholder: "Search..." })
@@ -21149,7 +21144,7 @@
 	        { className: "form-group" },
 	        _react2.default.createElement(
 	          "div",
-	          { className: "col-sm-offset-2 col-sm-10" },
+	          { className: "col-sm-10" },
 	          _react2.default.createElement(
 	            "div",
 	            { className: "checkbox" },
