@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import MyAppForm from './MyAppForm.jsx' ;
-ReactDom.render(<MyAppForm/>,
+import Notes from './Notes.jsx' ;
+ReactDom.render(<Notes/>,
 	document.getElementById('app')
 ) ;

@@ -1,7 +1,24 @@
 import React from 'react';
 
-export default ({children, ...props}) => (
+var Note = React.createClass({
+	render:function(){
+		var {children,name} = this.props ;
+		//var children = this.props.children ;
+		console.info(name) ;
+		return (
+			<div>
+			   {children}
+			</div>
+		) ;
+	}
+}) ;
+export default Note ;
+
+
+/*export default ({children, ...props}) => (
   <div {...props}>
     {children}
   </div>
-);
+);*/
+
+
