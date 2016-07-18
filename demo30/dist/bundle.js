@@ -21084,45 +21084,55 @@
 
 	var _Note2 = _interopRequireDefault(_Note);
 
+	var _Editable = __webpack_require__(174);
+
+	var _Editable2 = _interopRequireDefault(_Editable);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var notes = [{ id: 1, task: 'task001' }, { id: 2, task: 'task002' }, { id: 3, task: 'task003' }];
+	var notes = [{ id: 1, task: 'task001', editing: false }, { id: 2, task: 'task002', editing: true }, { id: 3, task: 'task003', editing: false }];
 
 	var Notes = _react2.default.createClass({
 	  displayName: 'Notes',
 
-	  onDelete: function onDelete() {
-	    console.info('hello world');
+	  onDelete: function onDelete(id) {
+	    console.info('hello world' + id);
+	  },
+	  onEdit: function onEdit(id) {
+	    console.info('onEdit : ' + id);
+	  },
+	  onNoteClick: function onNoteClick(id) {
+	    console.info('onNoteClick : ' + id);
 	  },
 	  render: function render() {
 	    var _this = this;
 
 	    var arr = notes.map(function (_ref) {
 	      var id = _ref.id;
+	      var editing = _ref.editing;
 	      var task = _ref.task;
 
 	      return _react2.default.createElement(
 	        'li',
-	        { key: id },
+	        { className: 'list-group-item', key: id },
 	        _react2.default.createElement(
 	          _Note2.default,
-	          { name: 'hello' },
-	          _react2.default.createElement(
-	            'span',
-	            null,
-	            task
-	          ),
+	          { name: 'hello', onClick: '{this.onNoteClick.bind(null, id)}' },
+	          _react2.default.createElement(_Editable2.default, {
+	            editing: editing,
+	            value: task,
+	            onEdit: _this.onEdit.bind(null, id) }),
 	          _react2.default.createElement(
 	            'button',
-	            { onClick: _this.onDelete },
-	            'x'
+	            { className: 'btn btn-success btn-small pull-right', onClick: _this.onDelete.bind(null, id) },
+	            '×'
 	          )
 	        )
 	      );
 	    });
 	    return _react2.default.createElement(
 	      'ul',
-	      null,
+	      { className: 'list-group' },
 	      arr
 	    );
 	  }
@@ -21155,7 +21165,6 @@
 			var name = _props.name;
 			//var children = this.props.children ;
 
-			console.info(name);
 			return _react2.default.createElement(
 				'div',
 				null,
@@ -21170,6 +21179,62 @@
 	    {children}
 	  </div>
 	);*/
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Edit = _react2.default.createClass({
+		displayName: 'Edit',
+
+		render: function render() {
+			return _react2.default.createElement(
+				'span',
+				{ onClick: this.props.onEdit },
+				_react2.default.createElement(
+					'span',
+					null,
+					'edit: ',
+					this.props.value
+				)
+			);
+		}
+	});
+
+	var Editable = _react2.default.createClass({
+		displayName: 'Editable',
+
+		render: function render() {
+			var _props = this.props;
+			var editing = _props.editing;
+			var value = _props.value;
+			var onEdit = _props.onEdit;
+
+			if (editing) {
+				return _react2.default.createElement(Edit, { value: value, onEdit: onEdit });
+			}
+			return _react2.default.createElement(
+				'span',
+				null,
+				'value: ',
+				value
+			);
+		}
+	});
+
+	exports.default = Editable;
 
 /***/ }
 /******/ ]);
