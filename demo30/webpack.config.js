@@ -9,14 +9,14 @@ module.exports = {
         publicPath:'./dist'
     },
     module: {
-        /*preLoaders: [
+        preLoaders: [
           {
             test: /\.(js|jsx)$/,
             loader: 'eslint-loader',
             include: [path.resolve(__dirname, "src")],
             exclude: /(node_modules|bower_components)/
           },
-        ],*/
+        ],
         loaders: [
             {
                 test: /.(jsx|js)?$/,
