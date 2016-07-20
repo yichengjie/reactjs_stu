@@ -13,3 +13,6 @@ rd /?
 xcopy demo01 brand01 /E
 删除文件夹
 rd brand01 /S/Q
+
+//回退到最新版本
+git reset --hard HEAD^
