@@ -10,7 +10,7 @@ var Note = React.createClass({
 	render:function(){
 		var children = this.props.children ;
 		return (
-			<div>
+			<div {...this.props}>
 			   {children}
 			</div>
 		) ;

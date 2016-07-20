@@ -18,7 +18,7 @@ var Notes = React.createClass({
     var arr = notes.map(({id,editing,task})=>{
        return (
           <li className ="list-group-item" key={id}>
-            <Note name ="hello" onClick ="{this.onNoteClick.bind(null, id)}">
+            <Note name ="hello">
               <Editable
                  editing={editing}
                  value={task}

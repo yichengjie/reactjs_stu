@@ -21145,7 +21145,7 @@
 	        { className: 'list-group-item', key: id },
 	        _react2.default.createElement(
 	          _Note2.default,
-	          { name: 'hello', onClick: '{this.onNoteClick.bind(null, id)}' },
+	          { name: 'hello' },
 	          _react2.default.createElement(_Editable2.default, {
 	            editing: editing,
 	            value: task,
@@ -21195,11 +21195,10 @@
 		displayName: 'Note',
 
 		render: function render() {
-			//var {children,...tail} = this.props ;
 			var children = this.props.children;
 			return _react2.default.createElement(
 				'div',
-				null,
+				this.props,
 				children
 			);
 		}
