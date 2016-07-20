@@ -2,3 +2,8 @@
 	npm install -g http-server
 2.启动http-server
 	http-server -a localhost -p 3000
+
+复制文件夹
+xcopy demo01 brand01 /E
+删除文件夹
+rd brand01 /S/Q
