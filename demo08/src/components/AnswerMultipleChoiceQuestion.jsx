@@ -18,7 +18,6 @@ var AnswerMultipleChoiceQuestion = React.createClass({
 	handleChanged:function(value){
 		this.setState({value:value}) ;
 		this.props.onCompleted(value) ;
-		console.info('value  1 : ' + value) ;
 	},
 	renderChoices:function(){
 		return this.props.choices.map(function(choice,i){

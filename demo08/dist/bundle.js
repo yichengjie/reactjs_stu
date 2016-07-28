@@ -63,7 +63,7 @@
 	var arrayOfChoices = ['苹果', "香蕉", "橘子"];
 
 	function onCompleted(value) {
-		console.info('value : ' + value);
+		console.info('你选择了最喜欢的水果 : ' + value);
 	}
 
 	_reactDom2.default.render(_react2.default.createElement(_AnswerMultipleChoiceQuestion2.default, { value: '橘子', choices: arrayOfChoices, onCompleted: onCompleted }), document.getElementById('app'));
@@ -21112,7 +21112,6 @@
 		handleChanged: function handleChanged(value) {
 			this.setState({ value: value });
 			this.props.onCompleted(value);
-			console.info('value  1 : ' + value);
 		},
 		renderChoices: function renderChoices() {
 			return this.props.choices.map(function (choice, i) {
@@ -21184,14 +21183,13 @@
 		getInitialState: function getInitialState() {
 			var id = this.props.id ? this.props.id : uniquid('radio-');
 			return {
-				checked: !!this.props.checked,
+				/*checked:!!this.props.checked ,*/
 				id: id,
 				name: id
 			};
 		},
 		handleChanged: function handleChanged(e) {
 			var checked = e.target.checked;
-			console.info('checked : ' + checked);
 			this.setState({ checked: checked });
 			if (checked) {
 				this.props.onChanged(this.props.value);
@@ -21208,7 +21206,7 @@
 						name: this.props.name,
 						id: this.props.id,
 						value: this.props.value,
-						checked: this.state.checked,
+						checked: this.props.checked,
 						onChange: this.handleChanged
 					}),
 					this.props.label

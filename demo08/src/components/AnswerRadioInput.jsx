@@ -19,14 +19,13 @@ var AnswerRadioInput = React.createClass({
 	getInitialState:function(){
 		var id = this.props.id ? this.props.id : uniquid('radio-');
 		return {
-			checked:!!this.props.checked ,
+			/*checked:!!this.props.checked ,*/
 			id:id,
 			name:id
 		};
 	},
 	handleChanged:function(e){
 			var checked = e.target.checked ;
-			console.info('checked : ' + checked) ;
 			this.setState({checked:checked}) ;
 			if(checked){
 				this.props.onChanged(this.props.value) ;
@@ -40,7 +39,7 @@ var AnswerRadioInput = React.createClass({
 						name = {this.props.name}
 						id = {this.props.id}
 						value = {this.props.value}
-						checked = {this.state.checked}
+						checked = {this.props.checked}
 						onChange = {this.handleChanged}
 					 />
 					 {this.props.label}
