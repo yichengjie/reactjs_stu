@@ -18,6 +18,16 @@ module.exports = {
     hot: true,
     inline: true,
     progress: true,
+    //其实很简单的，只要配置这个参数就可以了
+    /*
+    重启以后 发现/api/*的请求都代理到http://localhost:5000去了～
+    更多的方法可以看官方文档 Webpack dev server proxy*/
+    proxy: {
+      '/api/*': {
+          target: 'http://localhost:5000',
+          secure: false
+      }
+    }
   },
   //添加我们的插件 会自动生成一个html文件
   plugins: [
