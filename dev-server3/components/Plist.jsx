@@ -3,7 +3,6 @@ import React from 'react';
 import {get} from '../utils/ajax';
 
 export default class Plist extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {"loading":false, "list": []};
@@ -20,13 +19,11 @@ export default class Plist extends React.Component {
     let url = `https://api.github.com/search/users?q=${keyword}`;
     //发起ajax请求
     get(url).then((data) => {
-      //更新本组件的state
       this.setState({"loading":false, "list": data.items});
     }).catch((error) => {
       console.error(error);
     });
   }
-
   render() {
     const imgStyle = {
       width: '50px'
@@ -49,9 +46,9 @@ export default class Plist extends React.Component {
       } else {
         return (
           <div className="row">
-            {this.state.list.map(people=>{
+            {this.state.list.map((people,index)=>{
               return (
-                <div className="card">
+                <div className="card" key ={index}>
                   <img src={people.avatar_url} style={imgStyle}/>
                   <p className="card-text">
                     {people.login}
@@ -59,7 +56,7 @@ export default class Plist extends React.Component {
                 </div>
               )
             })}
-         </div>       
+         </div>
         );
       }
     }

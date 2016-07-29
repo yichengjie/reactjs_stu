@@ -1,6 +1,6 @@
-import $ from 'jquery'; 
+import $ from 'jquery';
 
-export function get(url){
+export function get(serverURL){
 	var defer = $.Deferred();
 	var option = {
    	   url:serverURL,
@@ -10,7 +10,7 @@ export function get(url){
    	   error: function (err) {
    		   defer.reject(err) ;
    	   },
-   	   success:function (result) { 
+   	   success:function (result) {
    		   defer.resolve(result);
    	   }
 	 };

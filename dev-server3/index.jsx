@@ -1,9 +1,9 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Search from './components/search';
 import Plist from './components/plist';
 
-/*class App extends React.Component {
-
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {"keyword": ""};
@@ -23,7 +23,11 @@ import Plist from './components/plist';
         </section>
 
         <Plist keyword={this.state.keyword}/>
-      </div>    
+      </div>
     );
   }
-}*/
+}
+
+const app = document.createElement('div');
+document.body.appendChild(app);
+ReactDOM.render(<App />, app);
