@@ -16,3 +16,8 @@ rd brand01 /S/Q
 
 //回退到最新版本
 git reset --hard HEAD^
+
+
+
+
+npm run  package.json中配置的scripts的key
