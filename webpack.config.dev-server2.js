@@ -1,8 +1,9 @@
 var path = require('path');
+var webpack = require('webpack');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
 
 var ROOT_PATH = path.resolve(__dirname);
-var APP_PATH = path.resolve(ROOT_PATH, 'app');
+var APP_PATH = path.resolve(ROOT_PATH, 'dev-server2/');
 var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 
 module.exports= {
@@ -22,6 +23,9 @@ module.exports= {
     inline: true,
     progress: true
   },
+  resolve: {
+      extensions: ['', '.js', '.jsx']
+  },
   //babel重要的loader在这里
   module: {
     loaders: [
@@ -33,6 +37,10 @@ module.exports= {
           //添加两个presents 使用这两种presets处理js或者jsx文件
           presets: ['es2015', 'react']
         }
+      },
+      {
+        test: /\.less$/,
+        loader: "style!css!less"
       }
     ]
   },
