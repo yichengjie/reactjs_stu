@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --config ./demo1/webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devserver": "webpack-dev-server --hot --inline --config webpack.config.dev-server.js",
-    "devserver2": "webpack-dev-server --hot --inline --config webpack.config.dev-server2.js",
-    "devserver3": "webpack-dev-server --hot --inline --config webpack.config.dev-server3.js"
+    "server": "webpack-dev-server --hot --inline --config webpack.config.dev-server.js",
+    "server2": "webpack-dev-server --hot --inline --config webpack.config.dev-server2.js",
+    "server3": "webpack-dev-server --hot --inline --config webpack.config.dev-server3.js"
   },
   "repository": {
     "type": "git",
