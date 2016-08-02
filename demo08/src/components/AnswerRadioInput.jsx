@@ -19,7 +19,6 @@ var AnswerRadioInput = React.createClass({
 	getInitialState:function(){
 		var id = this.props.id ? this.props.id : uniquid('radio-');
 		return {
-			/*checked:!!this.props.checked ,*/
 			id:id,
 			name:id
 		};

@@ -17,7 +17,9 @@ module.exports = {
                 query: {
                     presets: ['es2015', 'react']
                 }
-            }
+            },
+            { test: /\.css$/, loader: "style!css" },
+            {test: /\.(eot|woff|woff2|ttf|svg)$/, loader: "file-loader?name=file/[name].[hash:8].[ext]" }
         ]
     }/*,
     plugins:[
