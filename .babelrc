@@ -1,8 +1,18 @@
 {
   "presets": ["react", "es2015"],
+<<<<<<< HEAD
   /*"env": {
    "development": {
      "presets": ["react-hmre"]
    }
   }*/
 }
+=======
+  "env": {
+   "development": {
+     "presets": ["react-hmre"]
+   }
+  }
+}
+/*在开发的时候才启用HMR和Catch Error*/
+>>>>>>> fcf133f408e99f650905beeaf4b391be5a4303d8
