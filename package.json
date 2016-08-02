@@ -55,6 +55,7 @@
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "reflux": "^0.4.1",
+    "underscore": "^1.8.3",
     "uniquid": "^1.1.4",
     "uuid": "^2.0.2"
   }
