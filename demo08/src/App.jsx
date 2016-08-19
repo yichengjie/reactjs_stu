@@ -41,7 +41,6 @@ class App extends Component {
         <AnswerMultipleChoiceQuestion value ="M"
           choices ={arrayOfChoices} onCompleted = {this.onCompleted.bind(this)}/>
 				<form className="form-horizontal">
-
 					<FormItem typeList ={["F","M","T"]}  serviceType ={this.state.serviceType} resetValueDefault = {this.resetValueDefault.bind(this)}>
 						<div className="form-group">
 								<label htmlFor="inputEmail3" className="col-sm-2 control-label">Email</label>
