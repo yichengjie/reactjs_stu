@@ -9,23 +9,17 @@ module.exports = {
         publicPath:'./dist'
     },
     module: {
-        preLoaders: [
-          {
-            test: /\.(js|jsx)$/,
-            loader: 'eslint-loader',
-            include: [path.resolve(__dirname, "src")],
-            exclude: /(node_modules|bower_components)/
-          },
-        ],
         loaders: [
             {
                 test: /.(jsx|js)?$/,
                 loader: 'babel',
-                exclude: /(node_modules|bower_components)/,
+                exclude: /node_modules/,
                 query: {
                     presets: ['es2015', 'react']
                 }
-            }
+            },
+            { test: /\.css$/, loader: "style!css" },
+            {test: /\.(eot|woff|woff2|ttf|svg)$/, loader: "file-loader?name=file/[name].[hash:8].[ext]" }
         ]
     }/*,
     plugins:[
